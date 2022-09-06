@@ -1,34 +1,14 @@
 import React from "react";
 import "./App.css";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "45ch",
-    },
-  },
-}));
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 
 function App() {
-  const classes = useStyles();
-
   return (
     <div className="App">
       <h2>Recipe App</h2>
-      <form className={classes.root} noValidate autoComplete="off">
-        <TextField id="outlined-basic" variant="outlined" />
-        <Button
-          variant="contained"
-          color="primary"
-          style={{ width: "80px", height: "50px" }}
-        >
-          Search
-        </Button>
-      </form>
+      <TextField id="outlined-basic" variant="outlined" />
+      <Button variant="contained">Search</Button>
     </div>
   );
 }
