@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "45ch",
+    },
+  },
+}));
 
 function App() {
+  const classes = useStyles();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h2>Recipe App</h2>
+      <form className={classes.root} noValidate autoComplete="off">
+        <TextField id="outlined-basic" variant="outlined" />
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ width: "80px", height: "50px" }}
         >
-          Learn React
-        </a>
-      </header>
+          Search
+        </Button>
+      </form>
     </div>
   );
 }
