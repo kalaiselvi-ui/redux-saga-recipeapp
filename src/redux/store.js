@@ -1,6 +1,6 @@
 import { applyMiddleware, legacy_createStore } from "redux";
 import logger from "redux-logger";
-import createSagaMiddleware from "@redux-saga/core";
+import createSagaMiddleware from "redux-saga";
 import rootReducer from "./root-reducer";
 import rootSaga from "./sagas";
 
@@ -14,6 +14,6 @@ if (process.env.NODE_ENV === "development") {
 
 const store = legacy_createStore(rootReducer, applyMiddleware(...middleware));
 
-// sagaMiddleWare.run(rootSaga);
+sagaMiddleWare.run(rootSaga);
 
 export default store;
